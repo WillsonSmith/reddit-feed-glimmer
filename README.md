@@ -1,5 +1,7 @@
 # reddit-posts
 
+![basic demo](http://cl.willsonsmith.com/3c2i2p3c1S3I/reddit-feed.gif)
+
 This README outlines the details of collaborating on this Glimmer application.
 A short introduction of this app could easily go here.
 
