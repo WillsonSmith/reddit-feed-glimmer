@@ -1,5 +1,9 @@
+$dark-gray: #3c3c3c;
+
 body {
+  background: #fefefe;
   font-family: -apple-system, sans-serif;
+  font-size: 16px;
 }
 
 h1 {
@@ -10,14 +14,48 @@ h1 {
 .reddit-feed {
   max-width: 480px;
   margin: 0 auto;
+
+  transition: opacity 150ms ease-in-out;
 }
 
 .reddit-post {
-  p {
+  a {
+    color: $dark-gray;
     font-weight: 300;
+    text-decoration: none;
+    &::after {
+      content: "➡";
+      margin-left: 8px;
+    }
   }
 
   + .reddit-post {
-    border-top: 1px solid #3c3c3c;
+    border-top: 1px solid $dark-gray;
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+}
+
+
+.feed-button-container {
+  display: flex;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.feed-next-button {
+  background: #00cbee;
+  border: 0;
+  box-shadow: 2px 2px 0 #0A0EA1;
+
+  transition: box-shadow 100ms ease-in-out;
+
+  padding: 8px 16px;
+
+  color: #fff;
+  font-size: 16px;
+
+  &:active {
+    box-shadow: none;
   }
 }

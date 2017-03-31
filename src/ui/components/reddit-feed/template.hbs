@@ -1,5 +1,11 @@
-<div>
-  {{#each posts key="@index" as |post|}}
-    <reddit-post @postTitle={{post.title}} />
-  {{/each}}
+<div class="reddit-feed">
+  <div>
+    {{#each posts key="@index" as |post|}}
+      <reddit-post @postLink={{post.permalink}} @postTitle={{post.title}} />
+    {{/each}}
+  </div>
+
+  <div class="feed-button-container">
+    <button class="feed-next-button" onclick={{action getPosts}}>More posts</button>
+  </div>
 </div>
