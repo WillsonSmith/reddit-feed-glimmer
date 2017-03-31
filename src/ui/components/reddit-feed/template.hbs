@@ -1,0 +1,5 @@
+<div>
+  {{#each posts key="@index" as |post|}}
+    <reddit-post @postTitle={{post.title}} />
+  {{/each}}
+</div>

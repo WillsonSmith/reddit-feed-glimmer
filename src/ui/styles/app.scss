@@ -1,3 +1,23 @@
+body {
+  font-family: -apple-system, sans-serif;
+}
+
 h1 {
-  color: #444;
+  color: #3c3c3c;
+  font-weight: 400;
+}
+
+.reddit-feed {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.reddit-post {
+  p {
+    font-weight: 300;
+  }
+
+  + .reddit-post {
+    border-top: 1px solid #3c3c3c;
+  }
 }
