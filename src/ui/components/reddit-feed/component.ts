@@ -14,5 +14,6 @@ export default class RedditFeed extends Component {
     let postData = await response.json();
     this.afterMarker = postData.data.after;
     this.posts = postData.data.children.map((post) => post.data );
+    document.querySelector('a').focus();
   }
 };

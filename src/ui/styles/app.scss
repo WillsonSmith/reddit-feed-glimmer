@@ -1,9 +1,13 @@
 $dark-gray: #3c3c3c;
 
+html {
+  font-size: 10px;
+}
+
 body {
   background: #fefefe;
   font-family: -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 h1 {
@@ -16,6 +20,12 @@ h1 {
   margin: 0 auto;
 
   transition: opacity 150ms ease-in-out;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
 }
 
 .reddit-post {
@@ -31,8 +41,8 @@ h1 {
 
   + .reddit-post {
     border-top: 1px solid $dark-gray;
-    padding-top: 8px;
-    margin-top: 8px;
+    padding-top: 16px;
+    margin-top: 16px;
   }
 }
 
@@ -58,4 +68,15 @@ h1 {
   &:active {
     box-shadow: none;
   }
+}
+
+
+
+
+
+// helpers
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }

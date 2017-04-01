@@ -1,11 +1,11 @@
 <div class="reddit-feed">
-  <div>
+  <ul aria-live="polite">
     {{#each posts key="@index" as |post|}}
       <reddit-post @postLink={{post.permalink}} @postTitle={{post.title}} />
     {{/each}}
-  </div>
+  </ul>
 
   <div class="feed-button-container">
-    <button class="feed-next-button" onclick={{action getPosts}}>More posts</button>
+    <button class="feed-next-button" onclick={{action getPosts}}><visually-hidden @content="List "/>More posts</button>
   </div>
 </div>
