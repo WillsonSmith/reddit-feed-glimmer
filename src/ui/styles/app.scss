@@ -1,24 +1,33 @@
 $dark-gray: #3c3c3c;
 
 html {
+  box-sizing: border-box;
   font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   background: #fefefe;
   font-family: -apple-system, sans-serif;
   font-size: 1.6rem;
+
+  margin: 0;
 }
 
 h1 {
   color: #3c3c3c;
   font-weight: 400;
+
+  margin: 0;
+  margin-left: 16px;
 }
 
 .reddit-feed {
-  max-width: 480px;
-  margin: 0 auto;
-
+  margin: 16px auto;
+  max-width: 600px;
   transition: opacity 150ms ease-in-out;
 
   ul {
@@ -29,6 +38,12 @@ h1 {
 }
 
 .reddit-post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -8px 0 0 -8px;
+  padding: 0 16px;
+
   a {
     color: $dark-gray;
     font-weight: 300;
@@ -39,6 +54,14 @@ h1 {
     }
   }
 
+  img {
+    height: 100%;
+  }
+
+  >* {
+    margin: 8px 0 0 8px;
+  }
+
   + .reddit-post {
     border-top: 1px solid $dark-gray;
     padding-top: 16px;
@@ -46,10 +69,24 @@ h1 {
   }
 }
 
+.reddit-post__thumbnail {
+  background-size: cover;
+  flex: 0 1 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.reddit-post__link-container {
+  flex: 1 1 250px;
+  margin-left: 8px;
+}
+
 
 .feed-button-container {
   display: flex;
-  margin-top: 8px;
+  margin: 16px;
   justify-content: flex-end;
 }
 
@@ -60,10 +97,10 @@ h1 {
 
   transition: box-shadow 100ms ease-in-out;
 
-  padding: 8px 16px;
+  padding: 16px;
 
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
 
   &:active {
     box-shadow: none;

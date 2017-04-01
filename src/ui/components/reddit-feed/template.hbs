@@ -1,7 +1,7 @@
 <div class="reddit-feed">
   <ul aria-live="polite">
     {{#each posts key="@index" as |post|}}
-      <reddit-post @postLink={{post.permalink}} @postTitle={{post.title}} />
+      <reddit-post @postLink={{post.permalink}} @postTitle={{post.title}} @postThumbnail={{post.thumbnail}} />
     {{/each}}
   </ul>
 

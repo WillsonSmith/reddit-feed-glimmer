@@ -1,3 +1,9 @@
 <li class="reddit-post">
-  <a href="https://reddit.com{{@postLink}}" title={{@postTitle}}>{{@postTitle}}</a>
+  {{#if @postThumbnail.exists}}
+  <div class="reddit-post__thumbnail"style="background-image: url({{@postThumbnail.thumbnail}});"></div>
+  <!-- make a component -->
+  {{/if}}
+  <div class="reddit-post__link-container">
+    <a href="https://reddit.com{{@postLink}}" title={{@postTitle}}>{{@postTitle}}</a>
+  </div>
 </li>
