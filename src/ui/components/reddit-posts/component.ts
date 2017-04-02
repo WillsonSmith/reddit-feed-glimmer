@@ -1,5 +1,5 @@
 import Component, { tracked } from "@glimmer/component";
-import feedDispatcher from '../utils/dispatcher/feed-dispatcher';
+import feedDispatcher from '../../../utils/dispatcher/feed-dispatcher';
 
 export default class RedditPosts extends Component {
   @tracked feedTitle = "A Reddit feed";
