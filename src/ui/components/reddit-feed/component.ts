@@ -1,5 +1,9 @@
 import Component, { tracked } from '@glimmer/component';
 
+import feedStore from '../store/feed-store/helper';
+import feedDispatcher from '../dispatcher/feed-dispatcher/helper';
+
+
 function stripDefaultThumbnails(post) {
   if (post.thumbnail && post.thumbnail === 'default') {
     post.thumbnail = {exists: false};
@@ -22,7 +26,8 @@ export default class RedditFeed extends Component {
     let response = await fetch(`https://www.reddit.com/r/${this.args.subreddit}.json?after=${this.afterMarker}`);
     let postData = await response.json();
     this.afterMarker = postData.data.after;
-    this.posts = postData.data.children.map((post) => stripDefaultThumbnails(post.data) );
-    document.querySelector('a').focus();
+    feedStore.set('posts', postData.data.children.map((post) => stripDefaultThumbnails(post.data)));
+    this.posts = feedStore.get('posts');
+    feedDispatcher.dispatch('feed:loaded');
   }
 };
