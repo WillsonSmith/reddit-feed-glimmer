@@ -28,6 +28,10 @@ export default class RedditFeed extends Component {
     this.afterMarker = postData.data.after;
     feedStore.set('posts', postData.data.children.map((post) => stripDefaultThumbnails(post.data)));
     this.posts = feedStore.get('posts');
-    feedDispatcher.dispatch('feed:loaded');
+    feedDispatcher.dispatch({
+        type: 'feed:loaded',
+        title: feedStore.get('posts')[0].subreddit_name_prefixed,
+    })
   }
-};
+}
+
