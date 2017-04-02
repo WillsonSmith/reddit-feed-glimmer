@@ -1,7 +1,7 @@
 import Component, { tracked } from '@glimmer/component';
 
-import feedStore from '../store/feed-store/helper';
-import feedDispatcher from '../dispatcher/feed-dispatcher/helper';
+import feedStore from '../utils/store/feed-store';
+import feedDispatcher from '../utils/dispatcher/feed-dispatcher';
 
 
 function stripDefaultThumbnails(post) {
